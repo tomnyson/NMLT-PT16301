@@ -7,6 +7,8 @@ using namespace std;
 // cout in ra màn hình console
 // bắt buộc phải có một hàm man để chạy chương trình
 int main() {
-  cout << "hello world nhap mon lap trinh";
+  cout << "lớp:\t\t\t LT \n";
+  cout << "Tên: nguyên văn A" << endl;
+  cout << "tuổi: 18" << endl;
   return 0;
 }
