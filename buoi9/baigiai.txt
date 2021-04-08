@@ -1,0 +1,134 @@
+Cách 1. Tìm UCLN sử dụng phép trừ
+int gcd(int a, int b){
+    // Nếu a = 0 => ucln(a,b) = b
+    // Nếu b = 0 => ucln(a,b) = a
+    if (a == 0 || b == 0){
+        return a + b;
+    }
+    while (a != b){
+        if (a > b){
+            a -= b; // a = a - b
+        }else{
+            b -= a;
+        }
+    }
+    return a; // return a or b, bởi vì lúc này a và b bằng nhau
+}
+Cách 2. Tìm UCLN sử dụng phép chia dư
+int gcd(int a, int b){
+    // Lặp tới khi 1 trong 2 số bằng 0
+    while (a*b != 0){ 
+        if (a > b){
+            a %= b; // a = a % b
+        }else{
+            b %= a;
+        }
+    }
+    return a + b; // return a + b, bởi vì lúc này hoặc a hoặc b đã bằng 0.
+}
+Cách 3. Tìm UCLN sử dụng giải thuật Euclid
+int gcd(int a, int b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+// tim boi chung nho nhat BCNN(a, b) = a*b / UCLN(a,b)
+
+// kiem tra so  nguyen trong
+ for(int i = 2; i <= sqrt(n); i++){
+        if(n % i == 0){
+            count++;
+        }
+    }
+    if(count == 0){
+        printf("\n%d la so nguyen to", n);
+    }else{
+        printf("\n%d khong phai so nguyen to", n);
+    }
+    // kiem tra so chinh phuong
+
+    while(i*i <= n){
+        if(i*i == n){
+            printf("%d la so chinh phuong!\n", n);
+            return 0;
+        }
+        ++i;
+    }
+
+    // so hoan hoan
+
+    Số 6 là một số hoàn hảo vì tổng các ước số thật sự của số 6 là: 1 + 2 + 3 = 6 (tức là bằng chính nó)
+Số 12 không phải là một số hoàn hảo vì tổng các ước số thực sự của số 12 là: 1 + 2 + 3 + 4 + 6 = 16 (khác với chính nó)
+// so hoan hoan
+bool check(int n){
+    int sum = 0;//khai bao biem sum
+    for(int i=1;i<=n/2;i++){
+        if(n%i==0) 
+            sum+=i;
+    }
+    if(sum==n) return true; // tra ve true
+    return false;
+}
+
+// ve hinh tam giac
+
+int main()
+{
+    int soDong;
+    cout << "Nhap so dong: ";
+    cin >> soDong;
+    for(int i = 1; i <= soDong; i++) {
+        //in so ky tu sao
+        for(int j = 1; j <= i; j++) {
+            cout << "*";
+        }
+ 
+        //xuong dong ke tiep
+        cout << endl;
+    }
+    return 0;
+}
+
+// ve tam giac can
+
+int main()
+{
+    int soDong;
+    cout << "Nhap so dong: ";
+    cin >> soDong;
+    for(int i = 1; i <= soDong; i++) { 
+        // in ky tu khoang trang
+        for(int j = i; j < soDong; j++) {
+            cout << " ";
+        }
+ 
+        // in ky tu ngoi sao
+        for(int j = 1; j <= (2*i-1); j++) {
+            cout << "*";
+        }
+ 
+        // xuong dong ke tiep
+        cout << endl;
+    }
+    return 0;
+}
+
+//bài tập vẽ tam giác đều trong C++ (1)
+
+int main() {
+   int n,i,j;
+ 
+   n = 6;   // khai bao so hang.
+ 
+   printf("Ve tam giac sao deu:\n");
+   for(i = 1; i <= n; i++) {
+      for(j = 1; j <= n-i; j++)
+         printf(" ");
+ 
+      for(j = 1; j <= i; j++)
+         printf("* ");
+ 
+      printf("\n");
+   }
+   return 1;
+}
+
